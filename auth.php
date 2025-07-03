@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['cargo_usuario'] = $usuario['cargo'];
 
         // Redireciona para a tela principal de vendas
-        header("Location: modulos/vendas/tela_vendas.php");
+        header("Location: dashboard.php");
         exit();
     } else {
         // Falha no login

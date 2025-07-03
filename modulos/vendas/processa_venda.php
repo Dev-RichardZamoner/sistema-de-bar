@@ -46,11 +46,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         // 1. Inserir na tabela `vendas`
-        $stmt_venda = $pdo->prepare(
-            "INSERT INTO vendas (id_usuario, valor_total, valor_recebido, troco) VALUES (?, ?, ?, ?)"
-        );
-        $stmt_venda->execute([$id_usuario, $valor_total_backend, $valor_recebido, $troco]);
-        
+        $id_sessao_caixa = $_SESSION['id_sessao_caixa']; // Pega o ID da sessão de caixa atual
+
+$stmt_venda = $pdo->prepare(
+    "INSERT INTO vendas (id_usuario, id_sessao_caixa, valor_total, valor_recebido, troco) VALUES (?, ?, ?, ?, ?)"
+);
+$forma_pagamento = $data->forma_pagamento; // Pega a nova informação
+
+$stmt_venda = $pdo->prepare(
+    "INSERT INTO vendas (id_usuario, id_sessao_caixa, valor_total, valor_recebido, troco, forma_pagamento) VALUES (?, ?, ?, ?, ?, ?)"
+);
+$stmt_venda->execute([$id_usuario, $id_sessao_caixa, $valor_total_backend, $valor_recebido, $troco, $forma_pagamento]);
+    
         // Pega o ID da venda que acabamos de inserir
         $id_venda = $pdo->lastInsertId();
 
