@@ -40,3 +40,6 @@ CREATE TABLE `vendas_itens` (
   FOREIGN KEY (`id_venda`) REFERENCES `vendas`(`id`),
   FOREIGN KEY (`id_produto`) REFERENCES `produtos`(`id`)
 );
+
+INSERT INTO `usuarios` (`nome`, `email`, `senha`, `cargo`)
+VALUES ('Administrador', 'admin@sistema.com', '$2y$10$5jcCODYJEmEGZmtSJtIBKeGQyXKM2t0rlBKQadZlTVZVIm2otXI56', 'admin');
