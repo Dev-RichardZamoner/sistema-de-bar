@@ -1,6 +1,7 @@
 <?php
 require_once '../../config/db.php';
 require_once '../../includes/verificar_login.php';
+include_once '../../includes/header.php';
 
 // Buscar produtos para a busca
 $stmt = $pdo->query("SELECT id, nome, preco_venda, quantidade_estoque FROM produtos ORDER BY nome");

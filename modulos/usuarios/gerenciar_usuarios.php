@@ -1,6 +1,7 @@
 <?php
 require_once '../../config/db.php';
 require_once '../../includes/verificar_login.php';
+include_once '../../includes/header.php';
 
 // VERIFICAÇÃO DE SEGURANÇA ADICIONAL: SÓ ADMIN PODE ACESSAR
 if ($_SESSION['cargo_usuario'] !== 'admin') {

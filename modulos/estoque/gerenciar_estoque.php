@@ -2,6 +2,7 @@
 // Inclui os arquivos necessários
 require_once '../../config/db.php';
 require_once '../../includes/verificar_login.php';
+include_once '../../includes/header.php';
 
 // Lógica para processar o formulário de adição/edição de produtos (quando enviado)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nome'])) {
